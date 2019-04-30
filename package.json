@@ -1,0 +1,25 @@
+{
+  "name": "agenda-comunitaria",
+  "version": "1.0.0",
+  "description": "\"Trabalho de Web parte 1\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cintiaa/agenda-comunitaria.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cintiaa/agenda-comunitaria/issues"
+  },
+  "homepage": "https://github.com/Cintiaa/agenda-comunitaria#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.4",
+    "mongodb": "^3.2.3"
+  }
+}
