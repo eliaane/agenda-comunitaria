@@ -1,9 +1,12 @@
-var client = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
+
+const uri = "mongodb://cintia:teste123@ds219095.mlab.com:19095/crude-teste";
+
 
 module.exports = class User {
     static find() {
-        return client.connect('mongodb://127.0.0.1:27017/agenda-comunitaria', { useNewUrlParser: true }).then((client) => {
-            let db = client.db('agenda-comunitaria');
+        return MongoClient.connect(uri, { useNewUrlParser: true }).then((client) => {
+            let db = client.db('crude-teste');
             return db.collection('user').find({}).toArray();
         });
     }
