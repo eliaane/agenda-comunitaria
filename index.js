@@ -6,6 +6,8 @@ const http = require('http');
 const path = require('path');
 const UserDao = require('./src/model/users');
 
+const controller = require('./src/controller/users');
+
 //configura as depedencias
 
 const app = express();
@@ -20,10 +22,10 @@ app.set('view engine', 'hbs');
 //configurando o banco de dados
 const uri = 'mongodb://agenda:agenda123@ds151086.mlab.com:51086/db-agenda';
 mongoose.connect(uri, { useNewUrlParser: true }).then(() => {
-        console.log('Banco de dados conectado com sucesso');
-    }).catch((error) => {
-        console.log('Deu Ruim - Erro na conexão com o banco de dados', error);
-    });
+    console.log('Banco de dados conectado com sucesso');
+}).catch((error) => {
+    console.log('Deu Ruim - Erro na conexão com o banco de dados', error);
+});
 
 
 //configurando a porta
@@ -36,6 +38,7 @@ app.get('/', (req, res) => {
     })
 })
 
+app.post('/show', controller)
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
