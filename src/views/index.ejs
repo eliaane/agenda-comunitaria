@@ -5,17 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agenda Comunitaria</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
-    <h2>Registrar</h2>
-    <form action="/agenda" method="post">
+    <h2>Realize seu cadastro aqui</h2>
+    <form action="/" method="post">
+        <label for="">Nome:</label>
         <input type="text" name="nome" id="nome" placeholder="Nome" />
+        <label for="">Sobrenome:</label>
         <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" />
-        <input type="email" name="email" id="email" placeholder="E-mail" />
-        <input type="password" name="password" id="password" placeholder="Senha"  />
+        <label for="">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="Email">
+        <label for="">Senha:</label>
+        <input type="password" name="senha" id="senha" placeholder="Senha"  />
+        <label for="">Confirme sua senha:</label>
+        <input type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Senha"  />
         <button type="submit">Submit</button>
+    </form>
+
+    <h2>Faça o Login</h2>
+    <form action="/show" method="post">
+        <input type="email" name="email" id="email" placeholder="Insira seu e-mail">
+        <input type="password" name="senha" id="senha" placeholder="Insira sua senha">
+        <button type="submit">Login</button>
     </form>
 </body>
 
