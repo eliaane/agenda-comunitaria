@@ -6,30 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro</title>
+    
+    <link rel="icon" href="../favicon.png" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-    <h2>Realize seu cadastro aqui</h2>
-    <form action="/" method="post">
-        <label for="">Nome:</label>
-        <input type="text" name="nome" id="nome" placeholder="Nome" />
-        <label for="">Sobrenome:</label>
-        <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" />
-        <label for="">E-mail:</label>
-        <input type="email" name="email" id="email" placeholder="Email">
-        <label for="">Senha:</label>
-        <input type="password" name="senha" id="senha" placeholder="Senha"  />
-        <label for="">Confirme sua senha:</label>
-        <input type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Senha"  />
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" style="padding-top: 45px">
+                <h2>Criar Cadastro</h2>
+                <form action="/agenda" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="Sobrenome" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" autocomplete="off" />
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" autocomplete="off" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input type="password" class="form-control" name="confirmacaoSenha" id="confirmacaoSenha"
+                                placeholder="Confirmar" autocomplete="off" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
 
-    <h2>Faça o Login</h2>
-    <form action="/show" method="post">
-        <input type="email" name="email" id="email" placeholder="Insira seu e-mail">
-        <input type="password" name="senha" id="senha" placeholder="Insira sua senha">
-        <button type="submit">Login</button>
-    </form>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4" style="padding-top: 45px">
+
+                <h2>Fazer Login</h2>
+                <form action="/show" method="post">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Login" autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" autocomplete="off" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

@@ -9,6 +9,6 @@ router.get('/', function(req, res, next) {
   });
 
 //Request para criar um novo usuário
-router.post('/usuario', usuarioController.novoUsuario);
+router.post('/agenda', usuarioController.novoUsuario);
 
 module.exports = router;
