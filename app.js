@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
+const passport = require('passport');
+const expressSession = require('express-session');
+
 
 const UsuarioRouter = require('./routes/usuario');
 
@@ -30,21 +33,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Configurando Passport
+app.use(expressSession({
+    secret: 'session secreta',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure: false}
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Configurando rotas
-
 app.use('/', UsuarioRouter);
 
-/*  app.get('/', (req, res) =>{
-    res.status(200).json({
-        message: "Bem vindo!!"
-    })
-}); */
 
-/* app.get('/', function(req, res){
-    res.render("index");
-});
-   */
 
 //Configurando porta
 const porta = process.env.port || 3000;

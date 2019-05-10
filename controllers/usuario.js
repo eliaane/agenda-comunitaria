@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/usuarios');
 
+const usuarioController = {};
 
-exports.novoUsuario = function (req, res) {
+usuarioController.novoUsuario = function (req, res) {
     if (req.body.nome && req.body.sobrenome && req.body.email && req.body.senha) {//Verifica se todos os campos foram preenchidos
         if (req.body.confirmacaoSenha && req.body.senha == req.body.confirmacaoSenha) {//verifica se a senha e a confirmação de senha são iguais
             Usuario.findOne({ 'email': req.body.email })//verifica se o e-mail inserido já não foi cadastrado
@@ -68,3 +69,7 @@ exports.novoUsuario = function (req, res) {
         });
     }
 }
+
+
+
+module.exports = usuarioController;
