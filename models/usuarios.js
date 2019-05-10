@@ -19,10 +19,6 @@ const UserSchema = new mongoose.Schema({
     senha:{
         type: String,
         required: true
-    },
-    confirmacaoSenha: {
-        type: String,
-        required: true
     }
 });
 
