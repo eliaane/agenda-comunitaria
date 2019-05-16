@@ -9,6 +9,7 @@ const expressSession = require('express-session');
 
 
 const UsuarioRouter = require('./routes/usuario');
+const EventoRouter = require('./routes/eventos');
 
 
 const app = express();
@@ -44,7 +45,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Configurando rotas
-app.use('/', UsuarioRouter);
+app.use('/', UsuarioRouter)
+app.use('/', EventoRouter)
 
 
 
